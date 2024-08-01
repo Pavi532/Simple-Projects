@@ -1,14 +1,35 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Dialogs</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Dialogs</title>
+</head>
+
+<body>
+  <dialog id="dialogBasic">
+    <form method="dialog">
+      <p>Basic Dialog Here.</p>
+      <button onclick="dialogBasic.close()">OK</button>
+    </form>
+  </dialog>
+  <dialog class="dialog dialog-warning" id="dialogWarning">
+    <header>Warning</header>
+    <form method="dialog">
+      <p>Warning message here.</p>
+      <footer>
+        <button onclick="dialogWarning.close()">Ok</button>
+      </footer>
+    </form>
+  </dialog>
+
+
+  <button type="button" onclick="dialogBasic.showModal()" class="btn btn-show">Click</button>
+  <button type="button" onclick="dialogWarning.showModal()" class="btn btn-show">Click</button>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
